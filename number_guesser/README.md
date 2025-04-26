@@ -5,7 +5,7 @@ A simple number guessing game implemented in Python using object-oriented progra
 ## Project Structure
 
 ```
-num_guess_game/
+number_guesser/
 ├── src/
 │   ├── __init__.py
 │   ├── game.py        # Main game class
