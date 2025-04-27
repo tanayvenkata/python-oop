@@ -1,4 +1,4 @@
-from src.config import BORDER, DEFAULT_MIN, DEFAULT_MAX, DEFAULT_ATTEMPTS
+from src.config import BORDER, DEFAULT_MIN, DEFAULT_MAX, DEFAULT_ATTEMPTS, CORRECT, BUFFER
 
 
 class GameUI:
@@ -21,7 +21,7 @@ class GameUI:
 
     def display_closing(self, game_info):
         """Wraps up the stats and displays"""
-        if game_info["Recent Guess Result"] == "Correct":
+        if game_info["Recent Guess Result"] == CORRECT:
             game_info["Win Status"] = True
         else:
             game_info["Win Status"] = False
@@ -31,10 +31,10 @@ class GameUI:
         print(BORDER)
         print("Game Stats:")
         for key, value in game_info.items():
-            print(f"{key:{max_key_length}}: {value}")
+            print(f"{key:{max_key_length}}{BUFFER}: {value}")
         print(BORDER)
 
-    def recieve_player_guess(self):
+    def receive_player_guess(self):
         """Gets and validates player's input"""
         while True:
             user_input = input("Enter a number: ")

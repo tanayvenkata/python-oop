@@ -18,7 +18,7 @@ def main():
     # Main game loop - only check if game is active
     while game.is_active:
         # Get player's guess
-        player_guess = ui.recieve_player_guess()
+        player_guess = ui.receive_player_guess()
 
         # Process the guess and get updated game info
         # play_round handles game over checks
@@ -27,9 +27,8 @@ def main():
         # # Display result of this round
         ui.display_guess_result(game_info)
 
-        # If game is no longer active, show closing stats
-        if not game.is_active:
-            ui.display_closing(game_info)
+    # If game is no longer active, show closing stats
+    ui.display_closing(game_info)
 
 
 if __name__ == "__main__":

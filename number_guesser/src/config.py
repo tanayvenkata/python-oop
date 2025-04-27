@@ -9,6 +9,7 @@ DEFAULT_ATTEMPTS = 15
 BORDER_CHAR = "="
 BORDER_LENGTH = 10
 BORDER = BORDER_CHAR * BORDER_LENGTH
+BUFFER = "   "
 
 """ Result Values """
 TOO_HIGH = "Too High..."

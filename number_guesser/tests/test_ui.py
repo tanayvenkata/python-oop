@@ -49,7 +49,7 @@ class TestGameUI:
             "Attempts Used": 5,
             "Max Attempts": 15,
             "Secret Number": 42,
-            "Recent Guess Result": "Correct",
+            "Recent Guess Result": "Correct!",
         }
 
         with patch("builtins.print") as mock_print:
@@ -81,18 +81,18 @@ class TestGameUI:
             # Check the closing border
             assert calls[-1] == "=" * 10  # BORDER
 
-    def test_recieve_player_guess_valid_input(self, ui):
+    def test_receive_player_guess_valid_input(self, ui):
         """Test validate and return valid player guess"""
         with patch("builtins.input", return_value="50"):
-            result = ui.recieve_player_guess()
+            result = ui.receive_player_guess()
 
             assert result == 50
 
-    def test_recieve_player_guess_invalid_input(self, ui):
+    def test_receive_player_guess_invalid_input(self, ui):
         """Test validate and return invalid -> valid player guess"""
         with patch("builtins.input", side_effect=["abc", "50"]):
             with patch("builtins.print") as mock_print:
-                result = ui.recieve_player_guess()
+                result = ui.receive_player_guess()
 
                 assert result == 50
 
