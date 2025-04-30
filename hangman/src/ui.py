@@ -52,6 +52,7 @@ class GameUI:
         else:
             print("Incorrect")
         print(f"You have {info['Guesses Left']} guesses left.")
+        print(f"Letters guessed: {sorted(info['Letters Guessed'])}")
 
     def closing_message(self, info):
         """Print ending message depending on info."""
@@ -62,5 +63,5 @@ class GameUI:
             print("Sorry, you lost.")
 
         for k, v in info.items():
-            print(k, v)
+            print(f"{k}: {v}")
         print(BORDER)
