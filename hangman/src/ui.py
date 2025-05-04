@@ -1,6 +1,6 @@
 """Handles the user interface with the game (inputs)"""
 
-from config import BORDER, MAX_GUESS_ALLOWED, HANGMANPICS
+from .config import BORDER, MAX_GUESS_ALLOWED, HANGMANPICS
 
 class GameUI:
     def __init__(self):

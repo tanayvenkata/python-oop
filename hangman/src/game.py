@@ -1,6 +1,6 @@
 """The Hangman Game. This file handles the game logic"""
 
-from config import WORD_FILE, DEFAULT_WORD, MAX_GUESS_ALLOWED
+from .config import WORD_FILE, DEFAULT_WORD, MAX_GUESS_ALLOWED
 
 class Hangman:
 

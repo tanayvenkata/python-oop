@@ -1,5 +1,5 @@
-from game import Hangman
-from ui import GameUI
+from src.game import Hangman
+from src.ui import GameUI
 
 def play_game():
     game = Hangman()
