@@ -1,5 +1,5 @@
 from .hand import Hand
-from . import config as cf 
+from . import config as cf
 
 
 class Player:

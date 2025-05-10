@@ -2,6 +2,7 @@
 
 from .config import WORD_FILE, DEFAULT_WORD, MAX_GUESS_ALLOWED
 
+
 class Hangman:
 
     def __init__(self):
@@ -30,19 +31,20 @@ class Hangman:
                 return self.words
         except FileNotFoundError as e:
             return e
-    
+
     def choose_secret_word(self):
         """Select a word from a class list."""
-        import random 
+        import random
+
         if self.words:
             self._secret_word = random.choice(self.words)
         else:
             self._secret_word = DEFAULT_WORD
-    
+
     def check_win_status(self):
         """Determine if letter in guess == letters in secret word."""
         self.win = self.guessed_letters.issuperset(set(self.secret_word))
-    
+
     def check_game_status(self):
         """Check if game has ended if max guess limit or won game."""
         if self.win or self.guess_attempts >= MAX_GUESS_ALLOWED:
@@ -59,21 +61,16 @@ class Hangman:
             self.guess_attempts += 1
             self.recent_guess = False
 
-
     def get_info(self):
         """Return a dictionary of all info for other module's use"""
         game_info = {
             "Guess Attempts": self.guess_attempts,
-            "Game Active": self.active, 
+            "Game Active": self.active,
             "Game Won": self.win,
             "Letters Guessed": self.guessed_letters,
             "Guesses Left": MAX_GUESS_ALLOWED - self.guess_attempts,
             "Secret Word": self.secret_word,
             "Correct Guess": self.recent_guess,
         }
-        
+
         return game_info
-
-
-
-

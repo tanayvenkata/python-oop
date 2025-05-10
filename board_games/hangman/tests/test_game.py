@@ -20,7 +20,7 @@ class TestHangman:
         words = game.load_words()
         assert isinstance(words, list)
         assert len(words) > 0
-    
+
     def test_choose_secret_word_normal(self, game):
         """Test if random word pulled from word list."""
         game.words = ["apple", "banana", "cherry"]
@@ -32,18 +32,18 @@ class TestHangman:
         self.words = []
         game.choose_secret_word()
         assert game.secret_word == DEFAULT_WORD
-    
+
     def test_check_win_status_true(self, game):
         """Test guessed words all in secret word."""
         game.secret_word = DEFAULT_WORD
-        game.guessed_letters = {'a', 'm', 'z', 'i', 'n', 'g', 'e', 'o'}
+        game.guessed_letters = {"a", "m", "z", "i", "n", "g", "e", "o"}
         game.check_win_status()
         assert game.win == True
 
     def test_check_win_status_false(self, game):
         """Test that win==false if guesses insufficient."""
         game.secret_word = DEFAULT_WORD
-        game.guessed_letters = {'a', 'm', 'z'}
+        game.guessed_letters = {"a", "m", "z"}
         game.check_win_status()
         assert game.win == False
 
@@ -53,32 +53,31 @@ class TestHangman:
         game.win = False
         game.check_game_status()
         assert game.active == True
-    
+
     def test_check_game_status_false_win(self, game):
         """Test that game does not end if conditions not met."""
         game.guess_attempts = 5
         game.win = True
         game.check_game_status()
         assert game.active == False
-    
+
     def test_check_game_status_false_maxguess(self, game):
         """Test that game does not end if conditions not met."""
         game.guess_attempts = MAX_GUESS_ALLOWED
         game.win = False
         game.check_game_status()
         assert game.active == False
-    
+
     def test_log_guess(self, game):
         """Test that the guess attempt goes up and letters logged"""
         game.guess_attempts = 2
-        game.guessed_letters = {'x', 'y'}
-        game.log_guess('z')
+        game.guessed_letters = {"x", "y"}
+        game.log_guess("z")
 
         assert game.guess_attempts == 3
-        assert game.guessed_letters == {'x', 'y', 'z'}
+        assert game.guessed_letters == {"x", "y", "z"}
 
 
-    
 '''
     def test_init(self, game):
         """Test game initialization."""

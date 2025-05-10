@@ -1,4 +1,11 @@
-from src.config import BORDER, DEFAULT_MIN, DEFAULT_MAX, DEFAULT_ATTEMPTS, CORRECT, BUFFER
+from src.config import (
+    BORDER,
+    DEFAULT_MIN,
+    DEFAULT_MAX,
+    DEFAULT_ATTEMPTS,
+    CORRECT,
+    BUFFER,
+)
 
 
 class GameUI:

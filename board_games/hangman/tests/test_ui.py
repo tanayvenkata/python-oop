@@ -24,15 +24,15 @@ class TestGameUI:
         assert mock_print.call_count == 5
         calls = [call[0][0] for call in mock_print.call_args_list]
         assert calls[0] == BORDER
-        
+
     def test_get_guess(self, ui):
         """test incorrect user guess 2x and then good guess"""
         with patch("builtins.input", side_effect=["abc", "&", " Z  "]):
             with patch("builtins.print") as mock_print:
                 result = ui.get_guess()
-                
+
                 # expecting final result to be z
-                assert result == 'z'
+                assert result == "z"
 
                 # two messages printed and stated below
                 assert mock_print.call_count == 2
@@ -42,9 +42,6 @@ class TestGameUI:
 
     def test_display_result(info):
         """Test messaging at end of round or win/lose case."""
-        
-
-
 
 
 '''

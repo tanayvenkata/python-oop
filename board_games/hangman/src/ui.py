@@ -2,6 +2,7 @@
 
 from .config import BORDER, MAX_GUESS_ALLOWED, HANGMANPICS
 
+
 class GameUI:
     def __init__(self):
         pass
@@ -31,7 +32,7 @@ class GameUI:
             else:
                 # return guess for game class use
                 return guess
-    
+
     def update_hangman(self, info):
         index = min(info["Guess Attempts"], len(HANGMANPICS) - 1)
         print(f"{HANGMANPICS[index]}")

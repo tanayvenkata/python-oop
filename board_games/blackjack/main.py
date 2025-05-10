@@ -1,7 +1,6 @@
 from src.game import Blackjack
 
 
-
 def main():
     game = Blackjack()
     game.run()

@@ -6,9 +6,7 @@ from .card import Card
 class Deck:
     def __init__(self):
         """Hosts a list of card objects."""
-        self.cards = [
-            Card(rank=rank, suit=suit) for suit in SUITS for rank in RANKS
-        ]
+        self.cards = [Card(rank=rank, suit=suit) for suit in SUITS for rank in RANKS]
 
     def shuffle(self):
         """Randomizes deck."""

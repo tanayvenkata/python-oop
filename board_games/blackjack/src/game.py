@@ -4,6 +4,7 @@ from .deck import Deck
 from .ui import UI
 from . import config as cf
 
+
 class Blackjack:
     def __init__(self):
         self.deck = Deck()
