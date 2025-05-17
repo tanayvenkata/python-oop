@@ -1,4 +1,4 @@
-from src.config import (
+from .config import (
     BORDER,
     DEFAULT_MIN,
     DEFAULT_MAX,
@@ -44,8 +44,7 @@ class GameUI:
     def receive_player_guess(self):
         """Gets and validates player's input"""
         while True:
-            user_input = input("Enter a number: ")
-            if user_input.isdigit():
+            if (user_input := input("Enter a number: ")).isdigit():
                 number = int(user_input)
                 return number
             else:
